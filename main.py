@@ -1,14 +1,6 @@
 from core import planner
 
-def main():
-    print_menu()
-    choice = get_choice()
-
-    planner(choice)
-
-
-def print_menu():
-    menu = """
+menu = """
 ===== STUDY PLANNER =====
 1. Add Subject
 2. Log Study Hours
@@ -16,7 +8,15 @@ def print_menu():
 4. Delete Subject
 5. Save & Exit
 """
-    print(menu)
+
+def main():
+    while True:
+        print(menu)
+        choice = get_choice()
+        callee_func = planner(choice)
+        if callee_func == 5:
+            print("Exiting Study Planner")
+            break
 
 def get_choice():
     while True:
