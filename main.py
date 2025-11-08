@@ -11,6 +11,8 @@ menu = """
 """
 
 def main():
+
+    # Create 'data.json' if it does not exists
     if not os.path.exists("data.json"):
         try:
             with open("data.json", "x") as file:
@@ -18,14 +20,15 @@ def main():
         except FileExistsError:
             pass
     
+    # App loop
     while True:
         print(menu)
         choice = get_choice()
-        callee_func = planner(choice)
-        if callee_func == 5:
+        core_func_response = planner(choice)
+        if core_func_response == False:
             print("Exiting Study Planner")
             break
-
+            
 def get_choice():
     while True:
         try:
