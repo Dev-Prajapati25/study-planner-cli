@@ -1,3 +1,7 @@
+"""
+Entry Point file
+"""
+
 import os
 from core import planner
 from storage import Subject
@@ -27,22 +31,24 @@ def main():
     # App loop
     while True:
         print(menu)
-        choice = get_choice()
+        choice = num_input("Enter choice : ")
         core_func_response = planner(choice)
         if core_func_response == False:
             print("Exiting Study Planner")
             break
             
-def get_choice():
+
+# Utility functions
+def num_input(prompt:str) -> int:
     while True:
         try:
-            choice = int(input("Enter Choice : "))
+            num = int(input(prompt))
         except ValueError:
-            print("Enter valid choice !!")
+            print("Enter Valid Number")
         except Exception as e:
             print(f"Error occurred : {e}")
         else:
-            return choice
+            return num
 
 if __name__=="__main__":
     main()
