@@ -36,9 +36,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1436.6473054921735,
-			"y": 508.58115448971273,
-			"lastActivityTimestamp": 1762534012525,
+			"x": 562.2569390578403,
+			"y": 136.28437239734808,
+			"lastActivityTimestamp": 1762538730591,
 			"meta": {}
 		},
 		{
@@ -111,8 +111,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1280,
-			"y": 320,
+			"x": 1222.6751983368135,
+			"y": 465.42872580672133,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -229,8 +229,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 1300.0363317683475,
-			"y": 460.0833632339321,
+			"x": 1242.711530105161,
+			"y": 605.5120890406534,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -249,14 +249,24 @@
 					"type": "doc",
 					"content": [
 						{
-							"type": "paragraph",
-							"attrs": {
-								"dir": "auto"
-							},
+							"type": "bulletList",
 							"content": [
 								{
-									"type": "text",
-									"text": "[] add functionality for creating data.json on initialization and add data.json to .gitignore after wards"
+									"type": "listItem",
+									"content": [
+										{
+											"type": "paragraph",
+											"attrs": {
+												"dir": "auto"
+											},
+											"content": [
+												{
+													"type": "text",
+													"text": "add functionality for creating data.json on initialization and add data.json to .gitignore after wards"
+												}
+											]
+										}
+									]
 								}
 							]
 						},
@@ -343,9 +353,27 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1132.8812981814772,
-			"y": 227.38395385234378,
-			"z": 0.5543741073800644,
+			"meta": {},
+			"id": "binding:Qif_seEsYB6lI_C9tA-vL",
+			"type": "arrow",
+			"fromId": "shape:IvqR1YwIyIY58g5lfJh-d",
+			"toId": "shape:W90UZaQvOHTVqW4vuG2JZ",
+			"props": {
+				"isPrecise": true,
+				"isExact": false,
+				"normalizedAnchor": {
+					"x": 0.5,
+					"y": 0
+				},
+				"snap": "edge-point",
+				"terminal": "end"
+			},
+			"typeName": "binding"
+		},
+		{
+			"x": -326.92325350902445,
+			"y": 913.6658682810271,
+			"z": 0.2651554170001519,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -660,6 +688,50 @@
 			"typeName": "shape"
 		},
 		{
+			"x": 560,
+			"y": 60,
+			"rotation": 0,
+			"isLocked": false,
+			"opacity": 1,
+			"meta": {},
+			"id": "shape:IvqR1YwIyIY58g5lfJh-d",
+			"type": "arrow",
+			"props": {
+				"kind": "elbow",
+				"elbowMidPoint": 0.5,
+				"dash": "draw",
+				"size": "m",
+				"fill": "solid",
+				"color": "black",
+				"labelColor": "black",
+				"bend": 0,
+				"start": {
+					"x": 0,
+					"y": 70
+				},
+				"end": {
+					"x": 1120,
+					"y": 250
+				},
+				"arrowheadStart": "none",
+				"arrowheadEnd": "arrow",
+				"richText": {
+					"type": "doc",
+					"content": [
+						{
+							"type": "paragraph"
+						}
+					]
+				},
+				"labelPosition": 0.5,
+				"font": "draw",
+				"scale": 1
+			},
+			"parentId": "page:page",
+			"index": "aGrprugG",
+			"typeName": "shape"
+		},
+		{
 			"x": 35.029966106549864,
 			"y": 37.60068728634349,
 			"rotation": 0,
@@ -848,12 +920,12 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": "shape:UyvqrLMScAvB8XsvZGxZv",
+			"editingShapeId": null,
 			"croppingShapeId": null,
 			"selectedShapeIds": [
-				"shape:UyvqrLMScAvB8XsvZGxZv"
+				"shape:IvqR1YwIyIY58g5lfJh-d"
 			],
-			"hoveredShapeId": "shape:UyvqrLMScAvB8XsvZGxZv",
+			"hoveredShapeId": "shape:ZVMmmldG9JvSCbBCyzxDH",
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
 			"focusedGroupId": null,
@@ -881,8 +953,8 @@
 			"typeName": "binding"
 		},
 		{
-			"x": 1310,
-			"y": 350,
+			"x": 1252.6751983368135,
+			"y": 495.42872580672133,
 			"rotation": 0,
 			"isLocked": false,
 			"opacity": 1,
@@ -1194,7 +1266,7 @@
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "default",
+				"type": "grabbing",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -1204,7 +1276,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 786.4000244140625,
+				"w": 328,
 				"h": 749.6000366210938
 			},
 			"insets": [

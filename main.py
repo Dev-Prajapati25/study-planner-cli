@@ -1,3 +1,4 @@
+import os
 from core import planner
 
 menu = """
@@ -10,6 +11,13 @@ menu = """
 """
 
 def main():
+    if not os.path.exists("data.json"):
+        try:
+            with open("data.json", "x") as file:
+                pass
+        except FileExistsError:
+            pass
+    
     while True:
         print(menu)
         choice = get_choice()
