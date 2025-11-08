@@ -1,5 +1,6 @@
 import os
 from core import planner
+from storage import Subject
 
 menu = """
 ===== STUDY PLANNER =====
@@ -19,6 +20,9 @@ def main():
                 pass
         except FileExistsError:
             pass
+
+    # Fetch existing data from 'data.json' into Subject.data
+    Subject.prepare_data()
     
     # App loop
     while True:

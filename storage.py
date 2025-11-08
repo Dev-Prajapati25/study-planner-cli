@@ -31,8 +31,16 @@ class Subject:
         with open("data.json", "w") as file:
             json.dump(new_data, file, indent=4)
 
-def main():
-    pass
+    @classmethod
+    def prepare_data(cls):
+        try:
+            with open('data.json', 'r') as file:
+                cls.data = json.load(file)
+        except FileNotFoundError:
+            print("Error occurred : 'data.json' file not found")
+        except json.JSONDecodeError:
+            print("Error: Invalid JSON format in 'data.json'.")
+
 
 def new_subject(subject_name, goal_hrs):
     try:
@@ -40,8 +48,5 @@ def new_subject(subject_name, goal_hrs):
     except Exception as e:
         print(f"Some Error occurred while adding subject : {subject_name}")
     else:
+        Subject.write_data()
         return
-
-
-if __name__=="__main__":
-    main()
