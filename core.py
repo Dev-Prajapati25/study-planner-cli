@@ -59,7 +59,21 @@ def view_summary():
     pass
 
 def delete_subject():
-    pass
+    print("\n----- DELETE SUBJECT -----\n")
+
+    # Get and print list of subjects
+    subjects = Subject.data
+    print("Subjects :")
+    list_of_subjects = []
+
+    for index, subject in enumerate(subjects):
+        list_of_subjects.append([index, subject.get("subject_name")])
+
+    print(tabulate(list_of_subjects, headers=["Index", "Subject Name"], tablefmt="grid"))  
+
+    subj_index = num_input("Enter index of subject : ")
+    
+    Subject.subject_delete(subj_index)
 
 if __name__=="__main__":
     planner()

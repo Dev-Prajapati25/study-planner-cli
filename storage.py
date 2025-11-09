@@ -41,13 +41,20 @@ class Subject:
         except json.JSONDecodeError:
             print("Error: Invalid JSON format in 'data.json'.")
 
-#TODO - Continue Here
     @classmethod
     def update_log_hrs(cls, subject_index, log):
         cls.data[subject_index]["hours"] += log
         print(f"===={cls.data[subject_index]["hours"]}")
         cls.write_data()
 
+    @classmethod
+    def subject_delete(cls, subject_index):
+        try:
+            cls.data.pop(subject_index)
+        except IndexError:
+            print("Enter Valid Index !")
+        else:
+            cls.write_data()
 
 def new_subject(subject_name, goal_hrs):
     try:
