@@ -1,5 +1,5 @@
 from storage import new_subject, Subject
-from main import num_input
+from utility import num_input
 from tabulate import tabulate
 
 def planner(choice : int):
@@ -12,6 +12,7 @@ def planner(choice : int):
         2 : log_hours,
         3 : view_summary,
         4 : delete_subject,
+        9 : print_data
     }
     return register[choice]()
 
@@ -46,7 +47,12 @@ def log_hours():
     # Get choice of subject to log hours for
     subj_index = num_input("Enter index of subject : ")
     log = num_input("Enter hours to log : ")
+
+    # Update and write the new_data (log hours)
+    Subject.update_log_hrs(subj_index, log)
     
+def print_data():
+    print(Subject.data)
 
 
 def view_summary():

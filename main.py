@@ -5,7 +5,10 @@ Entry Point file
 import os
 from core import planner
 from storage import Subject
+from utility import num_input
 
+
+# 9 - For utility
 menu = """
 ===== STUDY PLANNER =====
 1. Add Subject
@@ -13,6 +16,7 @@ menu = """
 3. View Summary
 4. Delete Subject
 5. Save & Exit
+9. Print Data
 """
 
 def main():
@@ -38,17 +42,7 @@ def main():
             break
             
 
-# Utility functions
-def num_input(prompt:str) -> int:
-    while True:
-        try:
-            num = int(input(prompt))
-        except ValueError:
-            print("Enter Valid Number")
-        except Exception as e:
-            print(f"Error occurred : {e}")
-        else:
-            return num
+
 
 if __name__=="__main__":
     main()

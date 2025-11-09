@@ -42,11 +42,11 @@ class Subject:
             print("Error: Invalid JSON format in 'data.json'.")
 
 #TODO - Continue Here
-    # @classmethod
-    # def update_log_hrs(cls, subject_index, log):
-    #     cls.data[subject_index]
-
-    
+    @classmethod
+    def update_log_hrs(cls, subject_index, log):
+        cls.data[subject_index]["hours"] += log
+        print(f"===={cls.data[subject_index]["hours"]}")
+        cls.write_data()
 
 
 def new_subject(subject_name, goal_hrs):
