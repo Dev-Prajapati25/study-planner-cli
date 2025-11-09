@@ -12,13 +12,13 @@ def planner(choice : int):
         2 : log_hours,
         3 : view_summary,
         4 : delete_subject,
-        9 : print_data
     }
     return register[choice]()
 
 def add_subject():
     print("\n----- ADD SUBJECT -----\n")
-    subj_name = input("Enter Subject Name : ")
+    subj_name = input("Enter Subject Name(enter to cancel) : ")
+    if subj_name == "": return
     while True:
         goal_hrs = input("Enter goal hours (enter for default '0'): ")
         try:
@@ -45,14 +45,13 @@ def log_hours():
     print(tabulate(list_of_subjects, headers=["Index", "Subject Name", "Goal Hours"], tablefmt="grid"))
 
     # Get choice of subject to log hours for
-    subj_index = num_input("Enter index of subject : ")
-    log = num_input("Enter hours to log : ")
+    subj_index = num_input("Enter index of subject (enter to skip) : ", skip=True)
+    log = num_input("Enter hours to log (enter to skip) : ", skip=True)
 
-    # Update and write the new_data (log hours)
-    Subject.update_log_hrs(subj_index, log)
+    if subj_index is not None and log is not None:
+        # Update and write the new_data (log hours)
+        Subject.update_log_hrs(subj_index, log)
     
-def print_data():
-    print(Subject.data)
 
 
 def view_summary():
@@ -92,9 +91,10 @@ def delete_subject():
 
     print(tabulate(list_of_subjects, headers=["Index", "Subject Name"], tablefmt="grid"))  
 
-    subj_index = num_input("Enter index of subject : ")
+    subj_index = num_input("Enter index of subject (enter to skip) : ", skip=True)
     
-    Subject.subject_delete(subj_index)
+    if subj_index is not None:
+        Subject.subject_delete(subj_index)
 
 if __name__=="__main__":
     planner()

@@ -1,7 +1,9 @@
-def num_input(prompt:str) -> int:
+def num_input(prompt:str, skip:bool) -> int:
     while True:
+        num = input(prompt)
+        if num=="" and skip==True:return None
         try:
-            num = int(input(prompt))
+            num = int(num)
         except ValueError:
             print("Enter Valid Number")
         except Exception as e:

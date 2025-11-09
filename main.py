@@ -8,7 +8,6 @@ from storage import Subject
 from utility import num_input
 
 
-# 9 - For utility
 menu = """
 ===== STUDY PLANNER =====
 1. Add Subject
@@ -16,7 +15,6 @@ menu = """
 3. View Summary
 4. Delete Subject
 5. Save & Exit
-9. Print Data
 """
 
 def main():
@@ -35,7 +33,7 @@ def main():
     # App loop
     while True:
         print(menu)
-        choice = num_input("Enter choice : ")
+        choice = num_input("Enter choice : ", skip=False)
         core_func_response = planner(choice)
         if core_func_response == False:
             print("Exiting Study Planner")
