@@ -40,9 +40,9 @@ def log_hours():
     list_of_subjects = []
 
     for index, subject in enumerate(subjects):
-        list_of_subjects.append([index, subject.get("subject_name")])
+        list_of_subjects.append([index, subject.get("subject_name"), subject.get("goal_hrs") ])
 
-    print(tabulate(list_of_subjects, headers=["Index", "Subject Name"], tablefmt="grid"))
+    print(tabulate(list_of_subjects, headers=["Index", "Subject Name", "Goal Hours"], tablefmt="grid"))
 
     # Get choice of subject to log hours for
     subj_index = num_input("Enter index of subject : ")
@@ -56,7 +56,28 @@ def print_data():
 
 
 def view_summary():
-    pass
+    subjects = Subject.data
+    bars = []
+
+    print("\n----- VIEW SUMMARY -----\n")
+    # Prepare progress bars
+    for subject in subjects:
+        if not subject["goal_hrs"] == 0:
+            fraction = int((subject["hours"]/subject["goal_hrs"])*10)
+            notFraction = 10-fraction
+
+            bar = "██"
+            notBar = "░░"
+            progress_bar = f"{subject["subject_name"]} :{subject["hours"]}/{subject["goal_hrs"]}\n\t[{bar*4}{notBar*6}] {fraction*10}% Done\n"
+            bars.append(progress_bar)
+        else:
+            bars.append(f"{subject["subject_name"]} :{subject["hours"]}/{subject["goal_hrs"]}\n\tGoal Hours not present\n")
+    
+    # Print Progress bars
+    for bar in bars:
+        print(bar)
+        print("- - - - - - - - - - - - - -")
+
 
 def delete_subject():
     print("\n----- DELETE SUBJECT -----\n")
